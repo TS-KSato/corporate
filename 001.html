@@ -3,23 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- セキュリティヘッダー（metaフォールバック） -->
+    <!-- セキュリティヘッダー（強化版） -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'nonce-NEXUS2025'; connect-src 'self' https://docs.google.com; frame-ancestors 'none'; base-uri 'self';">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=(), usb=()">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="NEXUS INNOVATIONは、最先端のテクノロジーと創造的な発想で、企業の課題を解決し、新たな価値を生み出します。DXコンサルティング、AI開発、クラウドインフラ構築をご提供。">
     <meta name="theme-color" content="#A67B5B">
-    <title>NEXUS INNOVATION - 未来をデザインする</title>
+    
+    <!-- SEO & Social Media -->
+    <title>NEXUS INNOVATION - 未来をデザインする | DXコンサルティング・AI開発</title>
+    <link rel="canonical" href="https://nexus-innovation.co.jp/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NEXUS INNOVATION - 未来をデザインする">
+    <meta property="og:description" content="革新的なテクノロジーでビジネスの可能性を無限に広げる。DXコンサルティング、AI・機械学習開発、クラウドインフラ構築サービスを提供。">
+    <meta property="og:url" content="https://nexus-innovation.co.jp/">
+    <meta property="og:site_name" content="NEXUS INNOVATION">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NEXUS INNOVATION - 未来をデザインする">
+    <meta name="twitter:description" content="革新的なテクノロジーでビジネスの可能性を無限に広げる">
+    
+    <!-- Fonts optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json" nonce="NEXUS2025">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "NEXUS INNOVATION",
+      "url": "https://nexus-innovation.co.jp/",
+      "logo": "https://nexus-innovation.co.jp/logo.png",
+      "description": "最先端のテクノロジーと創造的な発想で、企業の課題を解決し、新たな価値を生み出すITコンサルティング企業",
+      "foundingDate": "2020",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "JP",
+        "addressRegion": "東京都",
+        "addressLocality": "千代田区丸の内"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@nexus-innovation.co.jp"
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <!-- Critical CSS (インライン) -->
     <style>
         :root {
-            /* トレンドカラー「モカ・ムース」をベースにしたカラーパレット */
+            /* カラーパレット（コントラスト改善版） */
             --mocha-primary: #A67B5B;
             --mocha-dark: #8B6343;
             --mocha-light: #D4A574;
             --mocha-cream: #F5E6D3;
             --accent-blue: #4A90E2;
-            --text-dark: #2C2C2C;
+            --text-dark: #1F1F1F; /* 改善: より暗く */
             --text-light: #F5F5F5;
             --bg-light: #FFFFFF;
             --bg-dark: #1A1A1A;
@@ -33,7 +82,7 @@
             --bg-primary: var(--bg-dark);
             --bg-secondary: #2A2A2A;
             --border-color: #444;
-            --bg-nav: rgba(26, 26, 26, 0.85);
+            --bg-nav: rgba(26, 26, 26, 0.95); /* 改善: より不透明 */
             --text-nav: var(--text-light);
             --logo-color: var(--mocha-light);
             --footer-bg: #101010;
@@ -44,13 +93,13 @@
             --scroll-indicator-color: var(--mocha-light);
         }
 
-        /* ライトモード */
+        /* ライトモード（コントラスト改善） */
         [data-theme="light"] {
             --text-primary: var(--text-dark);
             --bg-primary: var(--bg-light);
             --bg-secondary: #F0F0F0;
             --border-color: #E0E0E0;
-            --bg-nav: rgba(255, 255, 255, 0.8);
+            --bg-nav: rgba(255, 255, 255, 0.95); /* 改善: より不透明 */
             --text-nav: var(--text-dark);
             --logo-color: var(--mocha-primary);
             --footer-bg: #EAEAEA;
@@ -74,6 +123,13 @@
             transition: background-color 0.3s ease, color 0.3s ease;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        /* フォーカス改善 */
+        *:focus {
+            outline: 3px solid var(--mocha-primary);
+            outline-offset: 2px;
         }
 
         h1, h2, h3 {
@@ -82,7 +138,7 @@
             line-height: 1.2;
         }
 
-        /* ナビゲーション */
+        /* ナビゲーション（重要: above-the-fold） */
         nav {
             position: fixed;
             top: 0;
@@ -145,56 +201,12 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
             width: 100%;
         }
 
-        /* テーマトグル */
-        .theme-toggle {
-            background: none;
-            border: 2px solid var(--theme-toggle-border);
-            border-radius: 50px;
-            padding: 8px 16px;
-            color: var(--theme-toggle-text);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 16px;
-        }
-
-        .theme-toggle:hover {
-            background: var(--theme-toggle-bg-hover);
-            color: var(--text-light);
-            transform: translateY(-2px);
-        }
-        
-        /* ハンバーガーメニュー */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 1001;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--text-nav);
-            margin: 5px 0;
-            transition: all 0.3s ease;
-        }
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        /* ヒーローセクション */
+        /* ヒーロー（Critical above-the-fold） */
         .hero {
             height: 100vh;
             position: relative;
@@ -203,22 +215,6 @@
             justify-content: center;
             background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
             overflow: hidden;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23A67B5B;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23D4A574;stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)" /><circle cx="200" cy="200" r="150" fill="%23A67B5B" opacity="0.1" /><circle cx="1000" cy="600" r="200" fill="%23D4A574" opacity="0.1" /></svg>') center/cover;
-            opacity: 0.5;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-20px) scale(1.05); }
         }
 
         .hero-content {
@@ -268,14 +264,502 @@
             transform: translateY(30px);
             animation: fadeInUp 1s ease 0.6s forwards;
             box-shadow: 0 10px 30px rgba(166, 123, 91, 0.3);
+            role: button;
+            aria-label: "サービス詳細を見る";
         }
 
-        .cta-button:hover {
+        .cta-button:hover,
+        .cta-button:focus {
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(166, 123, 91, 0.4);
         }
 
-        /* スクロールインジケーター */
+        /* Back to topボタン */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover,
+        .back-to-top:focus {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(166, 123, 91, 0.4);
+        }
+
+        /* Reduced motion対応（改善版） */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            
+            .hero-bg {
+                animation: none !important;
+            }
+        }
+    </style>
+    
+    <!-- 非クリティカルCSSの遅延読み込み -->
+    <link rel="preload" href="data:text/css;base64,LyogTm9uLWNyaXRpY2FsIENTUyB3aWxsIGJlIGxvYWRlZCBoZXJlICov" as="style" onload="this.onload=null;this.rel='stylesheet'">
+</head>
+<body data-theme="light">
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+    
+    <!-- ナビゲーション -->
+    <nav id="navbar" role="navigation" aria-label="メインナビゲーション">
+        <div class="nav-container">
+            <a href="#" class="logo" aria-label="NEXUS INNOVATION トップページへ">NEXUS INNOVATION</a>
+            <button id="menuToggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links" id="navLinks" role="menubar">
+                <a href="#about" role="menuitem">企業情報</a>
+                <a href="#message" role="menuitem">代表メッセージ</a>
+                <a href="#services" role="menuitem">サービス</a>
+                <a href="#news" role="menuitem">お知らせ</a>
+                <a href="#contact" role="menuitem">お問い合わせ</a>
+                <a href="#recruitment" role="menuitem">採用情報</a>
+                <a href="#privacy" role="menuitem">プライバシーポリシー</a>
+                <button id="themeToggle" class="theme-toggle" type="button" aria-label="ダークモードに切り替える">
+                    <span aria-hidden="true">🌙</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Back to topボタン -->
+    <button class="back-to-top" id="backToTop" aria-label="ページトップへ戻る">
+        ↑
+    </button>
+
+    <!-- ヒーローセクション -->
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1 id="hero-title">未来をデザインする</h1>
+                <p class="hero-subtitle">革新的なテクノロジーで、ビジネスの可能性を無限に広げる</p>
+                <a href="#services" class="cta-button">サービスを見る</a>
+            </div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <svg width="30" height="50" viewBox="0 0 30 50" role="img" aria-labelledby="scrollIndicatorTitle">
+                    <title id="scrollIndicatorTitle">下にスクロール</title>
+                    <rect x="10" y="10" width="10" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <circle cx="15" cy="20" r="3" fill="currentColor"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Z型レイアウトセクション -->
+        <section class="z-section" id="about" aria-labelledby="about-title">
+            <h2 id="about-title" class="sr-only">企業情報</h2>
+            <div class="z-content fade-in">
+                <div class="z-text">
+                    <h3>イノベーションを創造する</h3>
+                    <p>私たちNEXUS INNOVATIONは、最先端のテクノロジーと創造的な発想で、企業の課題を解決し、新たな価値を生み出します。AIやIoT、ブロックチェーンなど、革新的な技術を駆使して、お客様のビジネスを次のステージへと導きます。</p>
+                </div>
+                <div class="z-image">
+                    <svg width="600" height="400" viewBox="0 0 600 400" aria-label="イノベーションを象徴する抽象的なグラフィック">
+                        <rect width="600" height="400" fill="#F5E6D3"/>
+                        <circle cx="300" cy="200" r="100" fill="#A67B5B" opacity="0.3"/>
+                        <rect x="200" y="150" width="200" height="100" fill="#D4A574" opacity="0.5"/>
+                        <path d="M 100 300 Q 300 100 500 300" stroke="#8B6343" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="z-content fade-in">
+                <div class="z-text">
+                    <h3>持続可能な未来へ</h3>
+                    <p>環境への配慮とビジネスの成長を両立させる、サステナブルなソリューションを提供します。SDGsに貢献しながら、企業価値を高める戦略的なアプローチで、持続可能な社会の実現に貢献します。</p>
+                </div>
+                <div class="z-image">
+                    <svg width="600" height="400" viewBox="0 0 600 400" aria-label="持続可能性を象徴する緑豊かな抽象グラフィック">
+                        <rect width="600" height="400" fill="#E8F5E9"/>
+                        <circle cx="150" cy="150" r="80" fill="#4CAF50" opacity="0.3"/>
+                        <circle cx="450" cy="250" r="100" fill="#81C784" opacity="0.3"/>
+                        <path d="M 50 350 Q 300 50 550 350" stroke="#388E3C" stroke-width="3" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代表メッセージ・企業理念セクション -->
+        <section class="message-section" id="message" aria-labelledby="message-title">
+            <div class="message-container fade-in">
+                <h2 id="message-title">代表メッセージ・企業理念</h2>
+                
+                <div class="ceo-message">
+                    <h3>代表メッセージ</h3>
+                    <p>デジタル技術の急速な進歩により、ビジネス環境は日々変化しています。私たちNEXUS INNOVATIONは、この変化を機会と捉え、お客様と共に未来を切り拓いてまいります。</p>
+                    <p>技術は手段であり、目的は人々の生活をより豊かにすることです。私たちは常にお客様の立場に立ち、最適なソリューションを提供することで、社会全体の発展に貢献したいと考えています。</p>
+                    <p>チャレンジ精神を忘れず、イノベーションを通じて新たな価値を創造し続けることをお約束いたします。</p>
+                    <div class="ceo-signature">代表取締役社長　田中 太郎</div>
+                </div>
+
+                <div class="philosophy-grid">
+                    <div class="philosophy-card">
+                        <h4>Innovation</h4>
+                        <p>常に新しい技術と発想で、従来の枠組みを超えたソリューションを生み出します。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h4>Collaboration</h4>
+                        <p>お客様とのパートナーシップを大切にし、共に成長していく関係を築きます。</p>
+                    </div>
+                    <div class="philosophy-card">
+                        <h4>Sustainability</h4>
+                        <p>持続可能な社会の実現を目指し、環境に配慮したテクノロジーを追求します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービスセクション -->
+        <section class="services" id="services" aria-labelledby="services-title">
+            <h2 id="services-title">サービス</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">🚀</div>
+                    <h3>DXコンサルティング</h3>
+                    <p>デジタルトランスフォーメーションを通じて、ビジネスプロセスを最適化し、競争力を強化します。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">🤖</div>
+                    <h3>AI・機械学習開発</h3>
+                    <p>最新のAI技術を活用した、カスタムソリューションの開発で業務効率を飛躍的に向上させます。</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon" aria-hidden="true">☁️</div>
+                    <h3>クラウドインフラ構築</h3>
+                    <p>スケーラブルで安全なクラウド環境を構築し、ビジネスの成長をサポートします。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- お知らせ・最新情報セクション -->
+        <section class="news-section" id="news" aria-labelledby="news-title">
+            <div class="news-container">
+                <h2 id="news-title">お知らせ・最新情報</h2>
+                <div class="news-list" role="feed">
+                    <article class="news-item fade-in">
+                        <div class="news-date">
+                            <time datetime="2025-06-01">2025.06.01</time>
+                        </div>
+                        <div class="news-content">
+                            <h3>新サービス「AIワークフロー最適化」をリリース</h3>
+                            <p>企業の業務プロセスを AI で分析し、最適化提案を行う新サービスを開始いたします。導入企業様の業務効率向上を実現します。</p>
+                        </div>
+                    </article>
+                    <article class="news-item fade-in">
+                        <div class="news-date">
+                            <time datetime="2025-05-15">2025.05.15</time>
+                        </div>
+                        <div class="news-content">
+                            <h3>DX推進セミナーを開催いたします</h3>
+                            <p>6月20日（金）にオンラインセミナー「中小企業のためのDX戦略」を開催いたします。参加費無料、事前申込制です。</p>
+                        </div>
+                    </article>
+                    <article class="news-item fade-in">
+                        <div class="news-date">
+                            <time datetime="2025-04-30">2025.04.30</time>
+                        </div>
+                        <div class="news-content">
+                            <h3>ISO27001認証を取得いたしました</h3>
+                            <p>情報セキュリティマネジメントシステムの国際規格ISO27001の認証を取得し、より安全なサービス提供体制を確立いたします。</p>
+                        </div>
+                    </article>
+                    <article class="news-item fade-in">
+                        <div class="news-date">
+                            <time datetime="2025-04-01">2025.04.01</time>
+                        </div>
+                        <div class="news-content">
+                            <h3>本社移転のお知らせ</h3>
+                            <p>業務拡大に伴い、2025年4月1日より本社を東京都千代田区丸の内に移転いたします。新しいオフィスでより一層のサービス向上に努めてまいります。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 問い合わせフォームセクション -->
+        <section class="contact-section" id="contact" aria-labelledby="contact-title">
+            <div class="contact-container">
+                <h2 id="contact-title">お問い合わせ</h2>
+                <p class="contact-description">
+                    サービスに関するご質問やご相談など、お気軽にお問い合わせください。<br>
+                    専門スタッフが丁寧にご対応いたします。
+                </p>
+                
+                <form class="contact-form fade-in" action="https://docs.google.com/forms/d/e/1FAIpQLSc7LCoS6NQTC2pm4ntBsRZxr1ozSs-m4qm24uYBhfxutHdlWw/viewform?usp=header" method="POST" novalidate aria-labelledby="contact-title">
+                    <div class="form-group">
+                        <label for="company">会社名 <span class="required" aria-label="必須">*</span></label>
+                        <input type="text" id="company" name="entry.123456789" required aria-describedby="company-error">
+                        <div class="error-message" id="company-error" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">お名前 <span class="required" aria-label="必須">*</span></label>
+                        <input type="text" id="name" name="entry.987654321" required aria-describedby="name-error">
+                        <div class="error-message" id="name-error" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">メールアドレス <span class="required" aria-label="必須">*</span></label>
+                        <input type="email" id="email" name="entry.456789123" required aria-describedby="email-error">
+                        <div class="error-message" id="email-error" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">電話番号</label>
+                        <input type="tel" id="phone" name="entry.789123456" aria-describedby="phone-help">
+                        <div class="help-text" id="phone-help">ハイフンなしで入力してください（例：09012345678）</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiry-type">お問い合わせ種別 <span class="required" aria-label="必須">*</span></label>
+                        <select id="inquiry-type" name="entry.321654987" required aria-describedby="inquiry-type-error">
+                            <option value="">選択してください</option>
+                            <option value="サービスについて">サービスについて</option>
+                            <option value="料金について">料金について</option>
+                            <option value="技術的な質問">技術的な質問</option>
+                            <option value="導入相談">導入相談</option>
+                            <option value="その他">その他</option>
+                        </select>
+                        <div class="error-message" id="inquiry-type-error" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">お問い合わせ内容 <span class="required" aria-label="必須">*</span></label>
+                        <textarea id="message" name="entry.147258369" required placeholder="具体的なご要望やご質問をお聞かせください" aria-describedby="message-error"></textarea>
+                        <div class="error-message" id="message-error" role="alert" aria-live="polite"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">送信する</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- 採用情報セクション -->
+        <section class="recruitment-section" id="recruitment" aria-labelledby="recruitment-title">
+            <div class="recruitment-container">
+                <h2 id="recruitment-title">採用情報</h2>
+                
+                <div class="recruitment-status fade-in">
+                    <h3>現在の採用状況</h3>
+                    <p>現在、新規採用の予定はございませんが、優秀な人材との出会いを常に求めております。</p>
+                    <p>将来的には以下のポジションでの採用を検討しております。ご興味のある方は、お気軽にお問い合わせください。</p>
+                    
+                    <div class="future-positions">
+                        <h4>今後募集予定のポジション</h4>
+                        <div class="position-list">
+                            <div class="position-item">
+                                <h5>AIエンジニア</h5>
+                                <p>機械学習・深層学習の実装経験者</p>
+                            </div>
+                            <div class="position-item">
+                                <h5>クラウドアーキテクト</h5>
+                                <p>AWS・Azure・GCPの設計・構築経験者</p>
+                            </div>
+                            <div class="position-item">
+                                <h5>DXコンサルタント</h5>
+                                <p>企業のデジタル変革支援経験者</p>
+                            </div>
+                            <div class="position-item">
+                                <h5>フロントエンドエンジニア</h5>
+                                <p>React・Vue.js等のモダンフレームワーク経験者</p>
+                            </div>
+                            <div class="position-item">
+                                <h5>プロジェクトマネージャー</h5>
+                                <p>IT プロジェクトの管理・推進経験者</p>
+                            </div>
+                            <div class="position-item">
+                                <h5>セールスエンジニア</h5>
+                                <p>技術営業・提案業務の経験者</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 30px;">
+                        <strong>応募方法：</strong><br>
+                        ご興味のある方は、履歴書・職務経歴書を添付の上、<a href="#contact" style="color: var(--mocha-primary); text-decoration: underline;">お問い合わせフォーム</a>よりご連絡ください。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- プライバシーポリシーセクション -->
+        <section class="privacy-section" id="privacy" aria-labelledby="privacy-title">
+            <div class="privacy-container">
+                <h2 id="privacy-title">プライバシーポリシー</h2>
+                
+                <div class="privacy-content fade-in">
+                    <h3>基本方針</h3>
+                    <p>株式会社NEXUS INNOVATION（以下「当社」）は、お客様の個人情報保護の重要性を認識し、個人情報の保護に関する法律および関連法令等を遵守し、お客様の個人情報を適切に取り扱います。</p>
+                    
+                    <h3>個人情報の収集について</h3>
+                    <p>当社は、以下の目的で個人情報を収集いたします：</p>
+                    <ul>
+                        <li>お問い合わせへの対応</li>
+                        <li>サービスの提供および改善</li>
+                        <li>重要なお知らせの通知</li>
+                        <li>マーケティング活動</li>
+                        <li>法令に基づく対応</li>
+                    </ul>
+                    
+                    <h3>個人情報の利用目的</h3>
+                    <p>収集した個人情報は、以下の目的で利用いたします：</p>
+                    <ul>
+                        <li>サービスに関するご案内</li>
+                        <li>お客様サポート</li>
+                        <li>システムの運用・保守</li>
+                        <li>統計データの作成（個人を特定できない形式）</li>
+                        <li>その他、お客様との契約履行に必要な業務</li>
+                    </ul>
+                    
+                    <h3>個人情報の第三者提供</h3>
+                    <p>当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
+                    
+                    <h3>個人情報の管理</h3>
+                    <p>当社は、個人情報を適切に管理し、漏洩・滅失・毀損等を防止するため、必要かつ適切な安全管理措置を講じます。</p>
+                    
+                    <h3>個人情報の開示・訂正・削除</h3>
+                    <p>お客様は、当社が保有する個人情報について、開示・訂正・削除を求めることができます。ご希望の場合は、お問い合わせフォームよりご連絡ください。</p>
+                    
+                    <h3>Cookieについて</h3>
+                    <p>当社のウェブサイトでは、お客様により良いサービスを提供するため、Cookieを使用する場合があります。Cookieの使用を希望されない場合は、ブラウザの設定で無効にすることができます。</p>
+                    
+                    <h3>プライバシーポリシーの変更</h3>
+                    <p>当社は、法令の変更等に伴い、本プライバシーポリシーを変更する場合があります。変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点で効力を生じるものとします。</p>
+                    
+                    <h3>お問い合わせ窓口</h3>
+                    <p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください：</p>
+                    <p>
+                        <strong>株式会社NEXUS INNOVATION</strong><br>
+                        個人情報保護管理者：総務部<br>
+                        メール：privacy@nexus-innovation.co.jp<br>
+                        電話：03-1234-5678（平日 9:00-18:00）
+                    </p>
+                    
+                    <p style="margin-top: 30px; text-align: right;">
+                        <strong>制定日：2025年1月1日</strong><br>
+                        <strong>最終更新日：2025年6月1日</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#about">企業情報</a>
+                <a href="#message">代表メッセージ</a>
+                <a href="#services">サービス</a>
+                <a href="#news">お知らせ</a>
+                <a href="#contact">お問い合わせ</a>
+                <a href="#recruitment">採用情報</a>
+                <a href="#privacy">プライバシーポリシー</a>
+            </div>
+            <p>&copy; <span id="currentYear">2025</span> NEXUS INNOVATION. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 遅延読み込みCSS -->
+    <style>
+        /* 非クリティカルCSS */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23A67B5B;stop-opacity:0.3" /><stop offset="100%" style="stop-color:%23D4A574;stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)" /><circle cx="200" cy="200" r="150" fill="%23A67B5B" opacity="0.1" /><circle cx="1000" cy="600" r="200" fill="%23D4A574" opacity="0.1" /></svg>') center/cover;
+            opacity: 0.5;
+        }
+
+        /* Motion animation (with reduced motion guard) */
+        @media (prefers-reduced-motion: no-preference) {
+            .hero-bg {
+                animation: float 20s ease-in-out infinite;
+            }
+            
+            @keyframes float {
+                0%, 100% { transform: translateY(0) scale(1); }
+                50% { transform: translateY(-20px) scale(1.05); }
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-nav);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--theme-toggle-border);
+            border-radius: 50px;
+            padding: 8px 16px;
+            color: var(--theme-toggle-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .theme-toggle:hover,
+        .theme-toggle:focus {
+            background: var(--theme-toggle-bg-hover);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 40px;
@@ -314,7 +798,7 @@
             direction: ltr;
         }
 
-        .z-text h2 {
+        .z-text h3 {
             font-size: clamp(2rem, 4vw, 3rem);
             color: var(--mocha-primary);
             margin-bottom: 20px;
@@ -432,15 +916,18 @@
             transition: transform 0.3s ease;
         }
 
-        .philosophy-card:hover::before {
+        .philosophy-card:hover::before,
+        .philosophy-card:focus-within::before {
             transform: translateX(0);
         }
 
-        .philosophy-card:hover {
+        .philosophy-card:hover,
+        .philosophy-card:focus-within {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
-        [data-theme="dark"] .philosophy-card:hover {
+        [data-theme="dark"] .philosophy-card:hover,
+        [data-theme="dark"] .philosophy-card:focus-within {
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
@@ -504,15 +991,18 @@
             transition: transform 0.3s ease;
         }
 
-        .service-card:hover::before {
+        .service-card:hover::before,
+        .service-card:focus-within::before {
             transform: translateX(0);
         }
 
-        .service-card:hover {
+        .service-card:hover,
+        .service-card:focus-within {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
-        [data-theme="dark"] .service-card:hover {
+        [data-theme="dark"] .service-card:hover,
+        [data-theme="dark"] .service-card:focus-within {
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
@@ -568,11 +1058,13 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
 
-        .news-item:hover {
+        .news-item:hover,
+        .news-item:focus-within {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
-        [data-theme="dark"] .news-item:hover {
+        [data-theme="dark"] .news-item:hover,
+        [data-theme="dark"] .news-item:focus-within {
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
 
@@ -646,6 +1138,10 @@
             margin-bottom: 8px;
         }
 
+        .required {
+            color: var(--mocha-primary);
+        }
+
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -662,14 +1158,37 @@
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
-            outline: none;
             border-color: var(--mocha-primary);
             box-shadow: 0 0 0 3px rgba(166, 123, 91, 0.1);
+        }
+
+        .form-group input.error,
+        .form-group textarea.error,
+        .form-group select.error {
+            border-color: #e74c3c;
         }
 
         .form-group textarea {
             resize: vertical;
             min-height: 120px;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .error-message.show {
+            display: block;
+        }
+
+        .help-text {
+            color: var(--text-primary);
+            opacity: 0.6;
+            font-size: 14px;
+            margin-top: 5px;
         }
 
         .submit-button {
@@ -685,7 +1204,8 @@
             transition: all 0.3s ease;
         }
 
-        .submit-button:hover {
+        .submit-button:hover,
+        .submit-button:focus {
             transform: translateY(-2px);
             box-shadow: 0 10px 25px rgba(166, 123, 91, 0.3);
         }
@@ -759,7 +1279,8 @@
             transition: all 0.3s ease;
         }
 
-        .position-item:hover {
+        .position-item:hover,
+        .position-item:focus-within {
             border-color: var(--mocha-primary);
             transform: translateY(-3px);
         }
@@ -861,8 +1382,51 @@
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
+        .footer-links a:hover,
+        .footer-links a:focus {
             color: var(--logo-color);
+        }
+
+        /* ユーティリティクラス */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* スキップリンク */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--mocha-primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 0 0 5px 0;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+            z-index: 1001;
         }
 
         /* レスポンシブ */
@@ -939,39 +1503,9 @@
             }
         }
 
-        /* マイクロアニメーション */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* スキップリンク（アクセシビリティ向上） */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--mocha-primary);
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 0 0 5px 0;
-            transition: top 0.3s ease;
-        }
-
-        .skip-link:focus {
-            top: 0;
-            z-index: 1001;
-        }
-
         /* 印刷時のスタイル */
         @media print {
-            nav, .scroll-indicator, .theme-toggle {
+            nav, .scroll-indicator, .theme-toggle, .back-to-top {
                 display: none;
             }
             .hero {
@@ -986,378 +1520,26 @@
                 background: white;
             }
         }
-
-        /* Reduced Motion対応 */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
-</head>
-<body data-theme="light">
-    <!-- スキップリンク（アクセシビリティ） -->
-    <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
-    
-    <!-- ナビゲーション -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo" aria-label="NEXUS INNOVATION トップページへ">NEXUS INNOVATION</a>
-            <button id="menuToggle" class="menu-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="navLinks">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="nav-links" id="navLinks">
-                <a href="#about">企業情報</a>
-                <a href="#message">代表メッセージ</a>
-                <a href="#services">サービス</a>
-                <a href="#news">お知らせ</a>
-                <a href="#contact">お問い合わせ</a>
-                <a href="#recruitment">採用情報</a>
-                <a href="#privacy">プライバシーポリシー</a>
-                <button id="themeToggle" class="theme-toggle" type="button" aria-label="ダークモードに切り替える">🌙</button>
-            </div>
-        </div>
-    </nav>
 
-    <!-- ヒーローセクション -->
-    <main id="main-content">
-        <section class="hero">
-            <div class="hero-bg"></div>
-            <div class="hero-content">
-                <h1>未来をデザインする</h1>
-                <p class="hero-subtitle">革新的なテクノロジーで、ビジネスの可能性を無限に広げる</p>
-                <a href="#services" class="cta-button">サービスを見る</a>
-            </div>
-            <div class="scroll-indicator" aria-hidden="true">
-                <svg width="30" height="50" viewBox="0 0 30 50" role="img" aria-labelledby="scrollIndicatorTitle">
-                    <title id="scrollIndicatorTitle">下にスクロール</title>
-                    <rect x="10" y="10" width="10" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <circle cx="15" cy="20" r="3" fill="currentColor"/>
-                </svg>
-            </div>
-        </section>
-
-        <!-- Z型レイアウトセクション -->
-        <section class="z-section" id="about">
-            <div class="z-content fade-in">
-                <div class="z-text">
-                    <h2>イノベーションを創造する</h2>
-                    <p>私たちNEXUS INNOVATIONは、最先端のテクノロジーと創造的な発想で、企業の課題を解決し、新たな価値を生み出します。AIやIoT、ブロックチェーンなど、革新的な技術を駆使して、お客様のビジネスを次のステージへと導きます。</p>
-                </div>
-                <div class="z-image">
-                    <svg width="600" height="400" viewBox="0 0 600 400" aria-label="イノベーションを象徴する抽象的なグラフィック">
-                        <rect width="600" height="400" fill="#F5E6D3"/>
-                        <circle cx="300" cy="200" r="100" fill="#A67B5B" opacity="0.3"/>
-                        <rect x="200" y="150" width="200" height="100" fill="#D4A574" opacity="0.5"/>
-                        <path d="M 100 300 Q 300 100 500 300" stroke="#8B6343" stroke-width="3" fill="none"/>
-                    </svg>
-                </div>
-            </div>
-
-            <div class="z-content fade-in">
-                <div class="z-text">
-                    <h2>持続可能な未来へ</h2>
-                    <p>環境への配慮とビジネスの成長を両立させる、サステナブルなソリューションを提供します。SDGsに貢献しながら、企業価値を高める戦略的なアプローチで、持続可能な社会の実現に貢献します。</p>
-                </div>
-                <div class="z-image">
-                    <svg width="600" height="400" viewBox="0 0 600 400" aria-label="持続可能性を象徴する緑豊かな抽象グラフィック">
-                        <rect width="600" height="400" fill="#E8F5E9"/>
-                        <circle cx="150" cy="150" r="80" fill="#4CAF50" opacity="0.3"/>
-                        <circle cx="450" cy="250" r="100" fill="#81C784" opacity="0.3"/>
-                        <path d="M 50 350 Q 300 50 550 350" stroke="#388E3C" stroke-width="3" fill="none"/>
-                    </svg>
-                </div>
-            </div>
-        </section>
-
-        <!-- 代表メッセージ・企業理念セクション -->
-        <section class="message-section" id="message">
-            <div class="message-container fade-in">
-                <h2>代表メッセージ・企業理念</h2>
-                
-                <div class="ceo-message">
-                    <h3>代表メッセージ</h3>
-                    <p>デジタル技術の急速な進歩により、ビジネス環境は日々変化しています。私たちNEXUS INNOVATIONは、この変化を機会と捉え、お客様と共に未来を切り拓いてまいります。</p>
-                    <p>技術は手段であり、目的は人々の生活をより豊かにすることです。私たちは常にお客様の立場に立ち、最適なソリューションを提供することで、社会全体の発展に貢献したいと考えています。</p>
-                    <p>チャレンジ精神を忘れず、イノベーションを通じて新たな価値を創造し続けることをお約束いたします。</p>
-                    <div class="ceo-signature">代表取締役社長　田中 太郎</div>
-                </div>
-
-                <div class="philosophy-grid">
-                    <div class="philosophy-card">
-                        <h4>Innovation</h4>
-                        <p>常に新しい技術と発想で、従来の枠組みを超えたソリューションを生み出します。</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <h4>Collaboration</h4>
-                        <p>お客様とのパートナーシップを大切にし、共に成長していく関係を築きます。</p>
-                    </div>
-                    <div class="philosophy-card">
-                        <h4>Sustainability</h4>
-                        <p>持続可能な社会の実現を目指し、環境に配慮したテクノロジーを追求します。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- サービスセクション -->
-        <section class="services" id="services">
-            <h2>サービス</h2>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">🚀</div>
-                    <h3>DXコンサルティング</h3>
-                    <p>デジタルトランスフォーメーションを通じて、ビジネスプロセスを最適化し、競争力を強化します。</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">🤖</div>
-                    <h3>AI・機械学習開発</h3>
-                    <p>最新のAI技術を活用した、カスタムソリューションの開発で業務効率を飛躍的に向上させます。</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon" aria-hidden="true">☁️</div>
-                    <h3>クラウドインフラ構築</h3>
-                    <p>スケーラブルで安全なクラウド環境を構築し、ビジネスの成長をサポートします。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- お知らせ・最新情報セクション -->
-        <section class="news-section" id="news">
-            <div class="news-container">
-                <h2>お知らせ・最新情報</h2>
-                <div class="news-list">
-                    <div class="news-item fade-in">
-                        <div class="news-date">2025.06.01</div>
-                        <div class="news-content">
-                            <h3>新サービス「AIワークフロー最適化」をリリース</h3>
-                            <p>企業の業務プロセスを AI で分析し、最適化提案を行う新サービスを開始いたします。導入企業様の業務効率向上を実現します。</p>
-                        </div>
-                    </div>
-                    <div class="news-item fade-in">
-                        <div class="news-date">2025.05.15</div>
-                        <div class="news-content">
-                            <h3>DX推進セミナーを開催いたします</h3>
-                            <p>6月20日（金）にオンラインセミナー「中小企業のためのDX戦略」を開催いたします。参加費無料、事前申込制です。</p>
-                        </div>
-                    </div>
-                    <div class="news-item fade-in">
-                        <div class="news-date">2025.04.30</div>
-                        <div class="news-content">
-                            <h3>ISO27001認証を取得いたしました</h3>
-                            <p>情報セキュリティマネジメントシステムの国際規格ISO27001の認証を取得し、より安全なサービス提供体制を確立いたします。</p>
-                        </div>
-                    </div>
-                    <div class="news-item fade-in">
-                        <div class="news-date">2025.04.01</div>
-                        <div class="news-content">
-                            <h3>本社移転のお知らせ</h3>
-                            <p>業務拡大に伴い、2025年4月1日より本社を東京都千代田区丸の内に移転いたします。新しいオフィスでより一層のサービス向上に努めてまいります。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 問い合わせフォームセクション -->
-        <section class="contact-section" id="contact">
-            <div class="contact-container">
-                <h2>お問い合わせ</h2>
-                <p class="contact-description">
-                    サービスに関するご質問やご相談など、お気軽にお問い合わせください。<br>
-                    専門スタッフが丁寧にご対応いたします。
-                </p>
-                
-                <form class="contact-form fade-in" action="https://docs.google.com/forms/d/e/1FAIpQLSe0000000000000000000000000000000000000000/formResponse" method="POST">
-                    <div class="form-group">
-                        <label for="company">会社名 <span style="color: #A67B5B;">*</span></label>
-                        <input type="text" id="company" name="entry.123456789" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="name">お名前 <span style="color: #A67B5B;">*</span></label>
-                        <input type="text" id="name" name="entry.987654321" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">メールアドレス <span style="color: #A67B5B;">*</span></label>
-                        <input type="email" id="email" name="entry.456789123" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="phone">電話番号</label>
-                        <input type="tel" id="phone" name="entry.789123456">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="inquiry-type">お問い合わせ種別 <span style="color: #A67B5B;">*</span></label>
-                        <select id="inquiry-type" name="entry.321654987" required>
-                            <option value="">選択してください</option>
-                            <option value="サービスについて">サービスについて</option>
-                            <option value="料金について">料金について</option>
-                            <option value="技術的な質問">技術的な質問</option>
-                            <option value="導入相談">導入相談</option>
-                            <option value="その他">その他</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">お問い合わせ内容 <span style="color: #A67B5B;">*</span></label>
-                        <textarea id="message" name="entry.147258369" required placeholder="具体的なご要望やご質問をお聞かせください"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">送信する</button>
-                </form>
-            </div>
-        </section>
-
-        <!-- 採用情報セクション -->
-        <section class="recruitment-section" id="recruitment">
-            <div class="recruitment-container">
-                <h2>採用情報</h2>
-                
-                <div class="recruitment-status fade-in">
-                    <h3>現在の採用状況</h3>
-                    <p>現在、新規採用の予定はございませんが、優秀な人材との出会いを常に求めております。</p>
-                    <p>将来的には以下のポジションでの採用を検討しております。ご興味のある方は、お気軽にお問い合わせください。</p>
-                    
-                    <div class="future-positions">
-                        <h4>今後募集予定のポジション</h4>
-                        <div class="position-list">
-                            <div class="position-item">
-                                <h5>AIエンジニア</h5>
-                                <p>機械学習・深層学習の実装経験者</p>
-                            </div>
-                            <div class="position-item">
-                                <h5>クラウドアーキテクト</h5>
-                                <p>AWS・Azure・GCPの設計・構築経験者</p>
-                            </div>
-                            <div class="position-item">
-                                <h5>DXコンサルタント</h5>
-                                <p>企業のデジタル変革支援経験者</p>
-                            </div>
-                            <div class="position-item">
-                                <h5>フロントエンドエンジニア</h5>
-                                <p>React・Vue.js等のモダンフレームワーク経験者</p>
-                            </div>
-                            <div class="position-item">
-                                <h5>プロジェクトマネージャー</h5>
-                                <p>IT プロジェクトの管理・推進経験者</p>
-                            </div>
-                            <div class="position-item">
-                                <h5>セールスエンジニア</h5>
-                                <p>技術営業・提案業務の経験者</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <p style="margin-top: 30px;">
-                        <strong>応募方法：</strong><br>
-                        ご興味のある方は、履歴書・職務経歴書を添付の上、<a href="#contact" style="color: var(--mocha-primary); text-decoration: underline;">お問い合わせフォーム</a>よりご連絡ください。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- プライバシーポリシーセクション -->
-        <section class="privacy-section" id="privacy">
-            <div class="privacy-container">
-                <h2>プライバシーポリシー</h2>
-                
-                <div class="privacy-content fade-in">
-                    <h3>基本方針</h3>
-                    <p>株式会社NEXUS INNOVATION（以下「当社」）は、お客様の個人情報保護の重要性を認識し、個人情報の保護に関する法律および関連法令等を遵守し、お客様の個人情報を適切に取り扱います。</p>
-                    
-                    <h3>個人情報の収集について</h3>
-                    <p>当社は、以下の目的で個人情報を収集いたします：</p>
-                    <ul>
-                        <li>お問い合わせへの対応</li>
-                        <li>サービスの提供および改善</li>
-                        <li>重要なお知らせの通知</li>
-                        <li>マーケティング活動</li>
-                        <li>法令に基づく対応</li>
-                    </ul>
-                    
-                    <h3>個人情報の利用目的</h3>
-                    <p>収集した個人情報は、以下の目的で利用いたします：</p>
-                    <ul>
-                        <li>サービスに関するご案内</li>
-                        <li>お客様サポート</li>
-                        <li>システムの運用・保守</li>
-                        <li>統計データの作成（個人を特定できない形式）</li>
-                        <li>その他、お客様との契約履行に必要な業務</li>
-                    </ul>
-                    
-                    <h3>個人情報の第三者提供</h3>
-                    <p>当社は、法令に基づく場合を除き、お客様の同意なく個人情報を第三者に提供することはありません。</p>
-                    
-                    <h3>個人情報の管理</h3>
-                    <p>当社は、個人情報を適切に管理し、漏洩・滅失・毀損等を防止するため、必要かつ適切な安全管理措置を講じます。</p>
-                    
-                    <h3>個人情報の開示・訂正・削除</h3>
-                    <p>お客様は、当社が保有する個人情報について、開示・訂正・削除を求めることができます。ご希望の場合は、お問い合わせフォームよりご連絡ください。</p>
-                    
-                    <h3>Cookieについて</h3>
-                    <p>当社のウェブサイトでは、お客様により良いサービスを提供するため、Cookieを使用する場合があります。Cookieの使用を希望されない場合は、ブラウザの設定で無効にすることができます。</p>
-                    
-                    <h3>プライバシーポリシーの変更</h3>
-                    <p>当社は、法令の変更等に伴い、本プライバシーポリシーを変更する場合があります。変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点で効力を生じるものとします。</p>
-                    
-                    <h3>お問い合わせ窓口</h3>
-                    <p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください：</p>
-                    <p>
-                        <strong>株式会社NEXUS INNOVATION</strong><br>
-                        個人情報保護管理者：総務部<br>
-                        メール：privacy@nexus-innovation.co.jp<br>
-                        電話：03-1234-5678（平日 9:00-18:00）
-                    </p>
-                    
-                    <p style="margin-top: 30px; text-align: right;">
-                        <strong>制定日：2025年1月1日</strong><br>
-                        <strong>最終更新日：2025年6月1日</strong>
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- フッター -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="#about">企業情報</a>
-                <a href="#message">代表メッセージ</a>
-                <a href="#services">サービス</a>
-                <a href="#news">お知らせ</a>
-                <a href="#contact">お問い合わせ</a>
-                <a href="#recruitment">採用情報</a>
-                <a href="#privacy">プライバシーポリシー</a>
-            </div>
-            <p>&copy; <span id="currentYear">2025</span> NEXUS INNOVATION. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- メインスクリプト（nonce付き） -->
+    <!-- メインスクリプト（改善版） -->
     <script type="module" nonce="NEXUS2025">
         (() => {
             'use strict';
 
-            // === テーマ切り替え ===
+            // DOM要素の取得
             const body = document.body;
             const themeToggle = document.getElementById('themeToggle');
             const menuToggle = document.getElementById('menuToggle');
             const navLinks = document.getElementById('navLinks');
             const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
 
-            // テーマ設定関数
+            // === テーマ切り替え（改善版） ===
             const setTheme = (theme) => {
                 body.setAttribute('data-theme', theme);
-                themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+                const iconSpan = themeToggle.querySelector('span[aria-hidden="true"]');
+                iconSpan.textContent = theme === 'light' ? '🌙' : '☀️';
                 themeToggle.setAttribute('aria-label', theme === 'light' 
                     ? 'ダークモードに切り替える' 
                     : 'ライトモードに切り替える');
@@ -1368,7 +1550,6 @@
                 }
             };
 
-            // 初期テーマ設定
             const getPreferredTheme = () => {
                 try {
                     const saved = localStorage.getItem('theme');
@@ -1381,29 +1562,49 @@
 
             setTheme(getPreferredTheme());
 
-            // テーマトグルイベント
             themeToggle.addEventListener('click', () => {
                 const currentTheme = body.getAttribute('data-theme');
                 setTheme(currentTheme === 'light' ? 'dark' : 'light');
             });
 
-            // === ハンバーガーメニュー制御 ===
-            menuToggle.addEventListener('click', () => {
-                const isActive = navLinks.classList.contains('active');
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-                menuToggle.setAttribute('aria-expanded', !isActive);
-                menuToggle.setAttribute('aria-label', isActive ? 'メニューを開く' : 'メニューを閉じる');
+            // === ハンバーガーメニュー制御（キーボード対応） ===
+            const toggleMenu = (force = null) => {
+                const isActive = force !== null ? force : !navLinks.classList.contains('active');
+                navLinks.classList.toggle('active', isActive);
+                menuToggle.classList.toggle('active', isActive);
+                menuToggle.setAttribute('aria-expanded', isActive);
+                menuToggle.setAttribute('aria-label', isActive ? 'メニューを閉じる' : 'メニューを開く');
+                
+                // Focus trap
+                if (isActive) {
+                    const firstLink = navLinks.querySelector('a, button');
+                    firstLink?.focus();
+                }
+            };
+
+            menuToggle.addEventListener('click', () => toggleMenu());
+            
+            // キーボード対応
+            menuToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleMenu();
+                }
+            });
+
+            // Escapeキーでメニューを閉じる
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                    toggleMenu(false);
+                    menuToggle.focus();
+                }
             });
 
             // モバイルメニュー内のリンククリックで閉じる
             navLinks.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                        menuToggle.classList.remove('active');
-                        menuToggle.setAttribute('aria-expanded', 'false');
-                        menuToggle.setAttribute('aria-label', 'メニューを開く');
+                        toggleMenu(false);
                     }
                 });
             });
@@ -1437,7 +1638,29 @@
                 navObserver.observe(heroSection);
             }
 
-            // === スムーススクロール ===
+            // === Back to top ボタン ===
+            const handleScroll = () => {
+                const scrolled = window.pageYOffset > window.innerHeight;
+                backToTop.classList.toggle('visible', scrolled);
+            };
+
+            // デバウンスされたスクロールハンドラー
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) {
+                    cancelAnimationFrame(scrollTimeout);
+                }
+                scrollTimeout = requestAnimationFrame(handleScroll);
+            }, { passive: true });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // === スムーススクロール（改善版） ===
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', (e) => {
                     const href = anchor.getAttribute('href');
@@ -1453,37 +1676,65 @@
                                 behavior: 'smooth'
                             });
                             
-                            // URLハッシュ更新（履歴管理）
+                            // URLハッシュ更新
                             history.pushState(null, '', href);
                         }
                     }
                 });
             });
 
-            // === フォーム送信処理 ===
+            // === フォーム送信処理（改善版） ===
             const contactForm = document.querySelector('.contact-form');
             if (contactForm) {
+                const validateField = (field) => {
+                    const errorElement = document.getElementById(field.id + '-error');
+                    let isValid = true;
+                    let message = '';
+
+                    if (field.hasAttribute('required') && !field.value.trim()) {
+                        isValid = false;
+                        message = 'この項目は必須です';
+                    } else if (field.type === 'email' && field.value && !field.value.includes('@')) {
+                        isValid = false;
+                        message = '有効なメールアドレスを入力してください';
+                    }
+
+                    field.classList.toggle('error', !isValid);
+                    if (errorElement) {
+                        errorElement.textContent = message;
+                        errorElement.classList.toggle('show', !isValid);
+                    }
+
+                    return isValid;
+                };
+
+                // リアルタイムバリデーション
+                contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+                    field.addEventListener('blur', () => validateField(field));
+                    field.addEventListener('input', () => {
+                        if (field.classList.contains('error')) {
+                            validateField(field);
+                        }
+                    });
+                });
+
                 contactForm.addEventListener('submit', (e) => {
-                    // バリデーション
                     const requiredFields = contactForm.querySelectorAll('[required]');
                     let isValid = true;
                     
                     requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
+                        if (!validateField(field)) {
                             isValid = false;
-                            field.style.borderColor = '#e74c3c';
-                        } else {
-                            field.style.borderColor = 'var(--border-color)';
                         }
                     });
                     
                     if (!isValid) {
                         e.preventDefault();
-                        alert('必須項目をすべて入力してください。');
+                        const firstError = contactForm.querySelector('.error');
+                        firstError?.focus();
                         return;
                     }
                     
-                    // 送信確認
                     if (!confirm('お問い合わせ内容を送信しますか？')) {
                         e.preventDefault();
                     }
@@ -1496,23 +1747,20 @@
                 yearElement.textContent = new Date().getFullYear();
             }
 
-            // === Reduced Motion対応 ===
-            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-            if (prefersReducedMotion.matches) {
-                document.documentElement.style.setProperty('--animation-duration', '0.01ms');
-                document.documentElement.style.setProperty('--transition-duration', '0.01ms');
-            }
-
             // === パフォーマンス監視（開発環境用） ===
             if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-                const observer = new PerformanceObserver((list) => {
-                    for (const entry of list.getEntries()) {
-                        if (entry.duration > 50) {
-                            console.warn('Long task detected:', entry);
+                try {
+                    const observer = new PerformanceObserver((list) => {
+                        for (const entry of list.getEntries()) {
+                            if (entry.duration > 50) {
+                                console.warn('Long task detected:', entry);
+                            }
                         }
-                    }
-                });
-                observer.observe({ entryTypes: ['longtask'] });
+                    });
+                    observer.observe({ entryTypes: ['longtask'] });
+                } catch (e) {
+                    console.warn('Performance monitoring not available:', e);
+                }
             }
         })();
     </script>
